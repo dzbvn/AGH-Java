@@ -79,7 +79,12 @@ public class Prod extends Node {
     @Override
     Node simplify() {
         Prod temp = new Prod();
-        for (Node n : args) {
+        //List<Node> temps = new ArrayList<>();
+
+         for (Node n : args) {
+            //System.out.print("Prod:");
+            //System.out.println(n);
+            //System.out.println(n.getClass());
             Node r = n.simplify();
             if (r.getClass() == Constant.class && r.evaluate() == 0){
                 return new Constant(0);
@@ -87,8 +92,18 @@ public class Prod extends Node {
             if (r.getClass() == Constant.class && r.evaluate() == 1){
                 continue;
             }
+            //System.out.print("r:");
+            //System.out.println(r);
+            //System.out.println(r.getClass());
+
+
             temp.mul(r);
+
+            //System.out.println(temp.toString());
         }
+         //Node result = temp.simplify();
+
+        //temp2.mul(temp);
         if (temp.args.size() == 0){
             return new Constant(0);
         }

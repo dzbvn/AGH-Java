@@ -11,7 +11,12 @@ public class Variable extends Node {
 
     @Override
     double evaluate() {
-        return sign*value;
+        if(value != null) {
+            return sign * value;
+        }
+        else{
+            return 0.0;
+        }
     }
 
     @Override

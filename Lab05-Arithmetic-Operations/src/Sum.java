@@ -70,7 +70,12 @@ public class Sum extends Node {
     public Node simplify() {
         Sum temp = new Sum();
         for (Node n : args) {
+            //System.out.println("---");
+            //System.out.println(n);
+
+            //System.out.println(n.getClass());
             Node r = n.simplify();
+            //System.out.println(r);
             if (r.getClass() == Constant.class && r.evaluate() == 0){
                 return new Constant(0);
             }

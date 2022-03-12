@@ -9,8 +9,8 @@ public class Main {
         //buildAndEvaluate();
         //defineCircle();
 
-        //diffPoly();
-        diffCircle();
+        diffPoly();
+        //diffCircle();
         //findPoints();
 
     }
